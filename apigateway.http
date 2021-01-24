@@ -1,0 +1,14 @@
+
+
+GET https://lqk13fbvoa.execute-api.eu-north-1.amazonaws.com/login?user=robert&password=pelarsal
+Authentication: MS5yb2JlcnQ=.0a96b14cf04b3e5a471bda5b7faa8c792c4ec933275cd118737c533715f4ae3e
+
+
+###
+
+POST https://lqk13fbvoa.execute-api.eu-north-1.amazonaws.com/attendance/1/20210126
+Authentication: MS5yb2JlcnQ=.0a96b14cf04b3e5a471bda5b7faa8c792c4ec933275cd118737c533715f4ae3e
+
+[
+    "Robert", "Neo", "Nova", "Nike"
+]

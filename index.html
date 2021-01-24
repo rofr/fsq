@@ -46,7 +46,7 @@
                 </button>
 
                 <a class="navbar-brand" href="#page-top">
-                  <img src="img/logo-inv-small.png" class="img-responsive" style="display:inline"> Fenix Squash
+                  <img src="img/logo-inv-small.png" class="img-responsive" style="display:inline"> LOKE
                 </a>
             </div>
 
@@ -57,13 +57,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#träna">Träna</a>
+                        <a href="#" id="groups">Grupper</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Om oss</a>
+                        <a href="#" id="attendees">Deltagare</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#tävla">Tävla</a>
+                        <a href="#login" id="login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -72,270 +72,42 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive" src="img/logo-inv.png" width="250" alt="">
-                    <div class="intro-text">
-                      <span class="name">Fenix Squash</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- About Section -->
-    <section class="success" id="träna">
+    <section class="success" id="lok">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Träna</h2>
+                    <h2>Närvaro</h2>
                     <hr class="star-light">
-                    <p>Vi är en liten men växande grupp med både killar och tjejer mellan 10 och 16 år.</p>
+                    <p></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                  <h3>När?</h3>
-                  <p>Tre fasta tillfällen per vecka:</p>
-                  <ul>
-                    <li>Onsdagar 15.45 - 17.45</li>
-                    <li>Torsdgar 16.30 - 18.00</li>
-                    <li>Lördagar 11.00 - 13.00</li>
-                  </ul>
-                  <h3>Var?</h3>
-                  <p>IS Sportcenter</a>, Borås.
-                  </p>
-                    <h3>Anmälan</h3>
-                    <p>Kontakta Robert för mer info eller bestämma tid för pröva-på.</p>
-                      <a href="tel:0733-839080" class="btn btn-lg btn-outline">
-                          <i class="fa fa-phone"></i> Ring
-                      </a>
-                      <a href="#" class="btn btn-lg btn-outline mailto" data-subject="Fenix SQ förfrågan" data-to="robert">
-                          <i class="fa fa-envelope"></i> Mail
-                      </a>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h4>
+                        <button class="btn btn-primary" data-bind="click: previousDay">
+                            <span class="glyphicon glyphicon-arrow-left"></span>
+                        </button>
+                        <span style="margin-left:30px;margin-right:30px" data-bind="text:displayDate()">
+                        </span>
+                        <button class="btn btn-primary" data-bind="click: nextDay">
+                            <span class="glyphicon glyphicon-arrow-right"></span>
+                        </button>
+                    </h4>
+                    <div class="list-group" data-bind="foreach:participants()">
+                        <a href="#" class="list-group-item list-group-item-info" 
+                            data-bind="click: toggle">
+                            <span data-bind="text:name"></span>
+                            <span class="badge" data-bind="text:status()"></span>
+                        </a>
 
-
-                </div>
-                <div class="col-lg-4">
-                  <h3>Vad kostar det?</h3>
-                  <p>Prova 2 ggr gratis, sedan medlemsavgift 50 kr till BG 250-8620 för perioden 1/7 till 30/6 och terminsavgift 150 kr
-                  Banhyra betalas i reception enligt något av följande:</p>
-                  <ul>
-                    <li>Klippkort ca 35 kr per tillfälle</li>
-                    <li>Halvårskort 500 kr</li>
-                    <li>Helårskort 1000 kr</li>
-                  </ul>
-                  <h3>Utrustning</h3>
-                  <ul>
-                    <li>Rack - finns att låna</li>
-                    <li>Skyddsglasögon - finns att låna</li>
-                    <li>Vattenflaska</li>
-                    <li>Skor för bruk inomhus</li>
-                  </ul>
+                    </div>
+                    <button class="btn btn-default" data-bind="click: popup">Lägg till</button>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Om oss</h2>
-                    <hr class="star-primary">
-                    <p>Blandade bilder från träning och tävling, klicka och läs om våra värderingar och filosofi.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i><br/> En övning i rörelse
-                            </div>
-                        </div>
-                        <img src="img/portfolio/bollplock2.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i><br/> Säkerhet
-                            </div>
-                        </div>
-                        <img src="img/portfolio/august.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i><br/> Hampus dömer i Växjö
-                            </div>
-                        </div>
-                        <img src="img/portfolio/domare.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i><br/> Nova på Nordic Junior Open 2014
-                            </div>
-                        </div>
-                        <img src="img/portfolio/glass.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i><br/>
-                                Sommarläger Malmö 2014
-                            </div>
-                        </div>
-                        <img src="img/portfolio/lager.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i><br/>
-                                Monkey walk ger starka ben
-                            </div>
-                        </div>
-                        <img src="img/portfolio/monkey.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i><br/>
-                                Neo med Nick Matthew
-                            </div>
-                        </div>
-                        <img src="img/portfolio/nick.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i>
-                                <br/> Uppvärmning Kanin Cup 2014
-                            </div>
-                        </div>
-                        <img src="img/portfolio/tysken.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-camera fa-3x"></i><br/> Titta noga på bollen
-                            </div>
-                        </div>
-                        <img src="img/portfolio/action.jpg" class="img-responsive" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Contact Section -->
-    <section id="tävla">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Tävlingar 2015/2016</h2>
-                    <hr class="star-primary">
-                    <p>
-                      För de som vill finns det möjlighet att tävla.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 table-responsive">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <td>Tävling</td>
-                        <td>Ort</td>
-                        <td>Datum</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>Junior GP 1</td>
-                      <td>Linköping</td>
-                      <td>19-20 September</td>
-                    </tr>
-                    <tr>
-                      <td>Danish Junior Open</td>
-                      <td>Köpenhamn</td>
-                      <td>2-4 Oktober</td>
-                    </tr>
-                    <tr>
-                      <td>Nordic Junior Open</td>
-                      <td>Malmö</td>
-                      <td>9-11 Oktober</td>
-                    </tr>
-                    <tr>
-                      <td>Junior GP 2</td>
-                      <td>Västerås</td>
-                      <td>14-15 November</td>
-                    </tr>
-                    <tr>
-                      <td>Junior GP 3</td>
-                      <td>Skellefteå</td>
-                      <td>12-13 December</td>
-                    </tr>
-                    <tr>
-                      <td>Junior SM</td>
-                      <td>Göteborg</td>
-                      <td>8-10 Januari</td>
-                    </tr>
-                    <tr>
-                      <td>Case Squash Cup</td>
-                      <td>Linköping</td>
-                      <td>5-7 Februari</td>
-                    </tr>
-                    <tr>
-                      <td>Junior GP 4</td>
-                      <td>Stockholm</td>
-                      <td>12-13 Mars</td>
-                    </tr>
-                    <tr>
-                      <td>Norwegian Junior Open</td>
-                      <td>Oslo</td>
-                      <td>15-17 April</td>
-                    </tr>
-                    <tr>
-                      <td>Junior GP 5</td>
-                      <td>Karlskrona</td>
-                      <td>23-24 April</td>
-                    </tr>
-                    <tr>
-                      <td>Junior GP 6 (Kanin Cup)</td>
-                      <td>Göteborg</td>
-                      <td>20-22 Maj</td>
-                    </tr>
-                  </tbody>
-                  </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="text-center">
         <div class="footer-below">
@@ -350,13 +122,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll visible-xs visble-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
 
     <!-- Portfolio Modals -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -384,211 +149,6 @@
             </div>
         </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Säkerhet</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/august.jpg" class="img-responsive img-centered" alt="">
-                            <p>
-                              Att bli träffad av en boll i ögat kan vara mycket farligt. Alla juniorer skall ha skyddsglasögon när de vistas på banan.
-                              Det är viktigt att visa hänsyn och använda omdöme under match och träning när flera vistas på banan.
-                            </p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Regler och ärligt spel</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/domare.jpg" class="img-responsive img-centered" alt="">
-                            <p>Efter en match är det tradition att spelarna dömer nästa match på samma bana. Det är ett stort ansvar och pirrigt i början.
-                              Man för poäng i protokollet, har koll på om bollen är ute, träffar plåten eller studsar två gånger.
-                              Svårast är när en spelare begär "LET", då skall man avgöra om det blir omspel eller poäng
-                              till någon av spelarna.
-                            </p>
-                            <p>
-                              I Fenix håller vi fair play högt. Ibland kan det vara svårt för domaren att se om en boll är felaktig,
-                              då är det sjävlklart att den som slagit bryter spelet och meddelar domaren.
-                            </p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Tävling</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/glass.jpg" class="img-responsive img-centered" alt="">
-                            <p>Nova möter här en irländska på glasbanan under Nordic i klassen GU11 (flickor under 11).
-                               På Dunlop Junior GP tävlingarna, totalt 6 st under säsongen, tävlar killar och tjejer
-                               tillsammans men indelade i klasser efter spelstyrka: Elit, A, B, C, D och ibland E.
-                               Det innebär jämnare motstånd för alla men bidrar också till en gemenskap över kön- och åldersgränser.
-                             </p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Sommarläger 2014</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/lager.jpg" class="img-responsive img-centered" alt="">
-                            <p>Varje sensommar anordnar Svenska Squashförbundet ett läger med aktiviteter från morgon till kväll under fem intensiva dagar.
-                               Ungdomarna utvecklar inte bara sin squash och fysik utan även det sociala, självständighet och ansvar.
-                            </p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Monkey Walk</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/monkey.jpg" class="img-responsive img-centered" alt="">
-                            <p>Varje träningspass börjar med uppvärmning, här en uppskattad styrke- och balansövning som vi kallar Monkey Walk</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Neo träffar Nick Matthew på Case</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/nick.jpg" class="img-responsive img-centered" alt="">
-                            <p>Squash är en liten sport i världen. Utövarna är få men passionerade och oftast ödmjuka, oavsett ranking.
-                              På resande fot är man alltid välkommen till lokala klubbar och hallar.</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Alla tillsammans</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/tysken.jpg" class="img-responsive img-centered" alt="">
-                            <p>Här spelar vi "Tysken". Två i taget spelar ett rally på 3/4 av banan, vinnaren står kvar.
-                            Alla får vara med oavsett nivå.
-                            </p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Fysik</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/action.jpg" class="img-responsive img-centered" alt="">
-                            <p>Squash är ett av de mest fysiskt krävande sporterna. Kvicka rörelser från T-positionen med utfall mot hörnen
-                              och snabba språng tillbaka. En enda bollduell kan vara upp till flera minuter och ingen vila är tillåten mellan bollarna.</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -602,6 +162,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/lok.js"></script>
 
 </body>
 
