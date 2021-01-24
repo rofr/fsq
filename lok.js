@@ -32,15 +32,15 @@ function saveParticipation(date, participants) {
 function Participant(name, viewModel){
     var self = this;
     this.name = name;
-    this.status = ko.observable("N");
+    this.status = ko.observable("");
     this.toggle = function(){
-        if (self.status() == "N") self.status("J");
-        else self.status("N");
+        if (self.status() == "") self.status("DELTAR");
+        else self.status("");
         viewModel.saveCurrentDay();
     }
 }
 
-function LokViewModel() {
+function ParticipationViewModel() {
     var self = this;
     self.currentDate = ko.observable(new Date());
     
@@ -59,8 +59,8 @@ function LokViewModel() {
     {
         var selected = loadParticipation(self.displayDate());
         self.participants().forEach(function(p){
-            if (selected.includes(p.name)) p.status("J");
-            else p.status("N");
+            if (selected.includes(p.name)) p.status("DELTAR");
+            else p.status("");
         })
     };
     self.applyCurrentDay();
@@ -75,7 +75,7 @@ function LokViewModel() {
     self.saveCurrentDay = function(){
         saveParticipation(self.displayDate(), 
         self.participants().filter(function(p){
-                return p.status() == "J";
+                return p.status() == "DELTAR";
             })
             .map(function(p){
                 return p.name;
@@ -98,7 +98,4 @@ function LokViewModel() {
     }
 }
 
-
-var viewModel = new LokViewModel();
-
-ko.applyBindings(viewModel);
+ko.applyBindings(new ParticipationViewModel(), document.getElementById('participationView'));
